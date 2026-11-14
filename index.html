@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asbob-uskunalar ijarasi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <h1>Asbob-uskunalar ijarasi</h1>
+    <p>Bir martalik ish uchun kerakli asbobni tanlang va ijara narxini hisoblang.</p>
+  </header>
+
+  <main class="container">
+    <section id="catalog" class="grid" aria-label="Asboblar ro'yxati"></section>
+  </main>
+
+  <div id="detail-modal" class="modal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="d-name">
+      <button type="button" class="close-btn" id="detail-close" aria-label="Yopish">&times;</button>
+
+      <img id="d-image" class="detail-image" src="" alt="">
+      <p class="tool-id" id="d-id"></p>
+      <h2 id="d-name"></h2>
+      <p id="d-desc" class="muted"></p>
+      <p class="price-line">Kunlik narx: <strong id="d-price"></strong></p>
+
+      <form id="rental-form" novalidate>
+        <div class="field">
+          <label for="customer-name">Ismingiz</label>
+          <input type="text" id="customer-name" placeholder="Masalan: Ali Valiyev" autocomplete="name">
+          <p class="error" id="name-error" hidden></p>
+        </div>
+
+        <div class="field">
+          <label for="days">Ijara kunlari (1 dan 7 gacha)</label>
+          <input type="text" id="days" inputmode="numeric" value="1" autocomplete="off">
+          <p class="error" id="days-error" hidden></p>
+        </div>
+
+        <div class="total">
+          <span>Jami narx:</span>
+          <strong id="total-price">0 so'm</strong>
+        </div>
+
+        <button type="submit" class="btn">Ijaraga olish</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="confirm-modal" class="modal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="c-title">
+      <h2 id="c-title" class="success">Ijara tasdiqlandi</h2>
+      <ul class="summary">
+        <li><span>Ism:</span> <strong id="c-name"></strong></li>
+        <li><span>Asbob:</span> <strong id="c-tool"></strong></li>
+        <li><span>Kunlar soni:</span> <strong id="c-days"></strong></li>
+        <li><span>Jami narx:</span> <strong id="c-total"></strong></li>
+      </ul>
+      <button type="button" class="btn" id="confirm-close">Yopish</button>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

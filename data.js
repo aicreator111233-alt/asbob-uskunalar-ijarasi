@@ -51,3 +51,5 @@ const tools = [
     image: makeImage("🧹", "#e0e7ff")
   }
 ];
+// Rental tools data management
+// Contains information about all six available tools.

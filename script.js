@@ -172,5 +172,4 @@ document.addEventListener("keydown", function (event) {
 });
 
 renderCards();
-// Application initialization
 console.log("Asbob-uskunalar ijarasi tizimi ishga tushdi.");
